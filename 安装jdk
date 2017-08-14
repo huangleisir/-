@@ -1,0 +1,3 @@
+1.  yum list java*   (查看yum源里面的jdk)
+2.  yum install java-1.8.0-openjdk* -y
+3.  java -version 查看jdk版本
