@@ -1,3 +1,5 @@
 1.  yum list java*   (查看yum源里面的jdk)
 2.  yum install java-1.8.0-openjdk* -y
 3.  java -version 查看jdk版本
+在oracle官方网站右键复制下载地址  然后wget来下载 还是很好用的   我就不信  不能java  a.java 在javac a
+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm64-vfp-hflt.tar.gz
