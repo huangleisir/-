@@ -1,1 +1,73 @@
 
+Jenkins 简介
+Jenkins 是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。
+
+1.jdk 安装  
+yum -y install java-1.8.0-openjdk-devel
+2.使用jenkins仓库，执行一下命令，
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+2.如果您以前从 Jenkins 导入过 key，那么 rpm --import 将失败，因为您已经有一个 key。请忽略，继续下面步骤。
+3.使用yum安装jenkins  
+yum -y install jenkins
+4. 启动jenkins病设置为开机启动
+systemctl start jenkins.service
+chkconfig jenkins on
+5. 打开jenkins页面 http://119.29.23.67:8080
+6. 查看管理员密码  
+cat /var/lib/jenkins/secrets/initialAdminPassword
+7. 我们选择默认的 install suggested plugins 来安装插件。
+-------------------end----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
