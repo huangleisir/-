@@ -61,6 +61,9 @@ mvn package
 重新开启 target 目录，可看到生成了 .jar 文件。
 从输出的日志可以看到，执行 package 前，会先执行 compile 及 test，最后执行了打包。
 
+ps： 加这个跳过测试 -Dmaven.test.skip=true 
+
+
 
 
 
