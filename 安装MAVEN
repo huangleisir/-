@@ -5,7 +5,61 @@ Apache Maven 是一个软件项目管理及自动构建工具，由 Apache 软�
 1. 安装JDK1.8 
 yum -y install java-1.8.0-openjdk-devel
 
-2. 安装maven
+2. Maven 下载
+我们可以从官网下载页获取最新的下载链接（Binary tar.gz archive）。
+然后我们使用 wget 命令将其下载：
+cd /home
+wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+3. 解压压缩包：
+tar xzvf apache-maven-3.5.0-bin.tar.gz
+4. 将文件夹移动至 /usr/local/ 目录：
+mv apache-maven-3.5.0  /usr/local/apache-maven
+5. 配置环境变量
+编辑 /etc/profile，在最下方添加：
+MAVEN_HOME=/usr/local/apache-maven
+export MAVEN_HOME
+export PATH=${PATH}:${MAVEN_HOME}/bin
+保存文件，并运行如下命令使环境变量生效：
+source /etc/profile
+检查 Maven 是否成功安装：
+mvn -version
+二 . maven简单实用
+1. 构建
+我们可以通过 archetype:generate 命令快速构建出项目骨架。
+Hello World
+
+我们使用该命令创建一个 helloworld 项目。过程中可一路回车键选择默认值:
+cd /home
+mvn archetype:generate -DgroupId=helloworld -DartifactId=helloworld
+ mvn 指令首次执行时，会从远程“中央仓库”下载一些必需的文件，请耐心等待。
+ 项目结构
+
+点击 /home/helloworld 查看项目结构。(开发者平台才可以，左边有目录结构)
+其中：
+/pom.xml 为项目对象模型（Maven 项目配置）
+/src/main/java 用于存放源代码
+/src/test/java 用于存放单元测试代码
+/src/target 用于存放编译、打包后的输出文件
+2. 编译   
+进入项目目录：
+cd /home/helloworld
+执行编译
+mvn compile
+重新开启 helloworld 项目文件夹，可以看到生成 target 目录。
+3. 运行
+你可以使用 mvn 指明 mainClass 来运行项目：
+mvn exec:java -Dexec.mainClass="helloworld.App"
+完成后可看到终端输出了：
+Hello World!
+3. 测试
+我们可以通过 test 指令来运行单元测试代码。
+mvn test
+完成后可看到终端输出测试结果。
+4. 打包
+通过 package 指令来执行打包。
+mvn package
+重新开启 target 目录，可看到生成了 .jar 文件。
+从输出的日志可以看到，执行 package 前，会先执行 compile 及 test，最后执行了打包。
 
 
 
