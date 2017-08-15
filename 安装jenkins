@@ -20,6 +20,8 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 7. 我们选择默认的 install suggested plugins 来安装插件。
 -------------------end----------------------
 
+jenkins的使用没有讲，这点是个大遗憾，回头百度一下怎么用
+
 
 
 
